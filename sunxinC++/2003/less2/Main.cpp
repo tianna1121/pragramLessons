@@ -7,10 +7,8 @@ public:
 	// overloaded
 	Animal(int height, int weight){ cout << "animal construct overloaded param" << endl; }
 
-	
-	void eat(){
-		cout << "animal eat" <<endl;
-	}
+	// declare the func, and it should be in .h files
+	void eat();
 
 // can only access by inherent class
 // cannot access by others
@@ -31,6 +29,10 @@ public:
 
 	~Animal(){ cout << "Animal Deconstruct" << endl; }
 };
+
+void Animal::eat(){
+
+}
 
 // if father class public, then public
 // if father class protected, then protected
@@ -59,6 +61,7 @@ private:
 void fn(Animal *pAn){
 	pAn->breathe();
 }
+
 
 int main(){
 
