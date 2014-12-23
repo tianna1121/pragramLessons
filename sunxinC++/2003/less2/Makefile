@@ -7,4 +7,4 @@ main.o: Main.cpp
 	g++ -c Main.cpp
 
 clean:
-	rm point.o point.exe main.o main.exe
+	rm point.o point.exe main.o 
