@@ -81,6 +81,21 @@ int main(){
 	// then this will call Fish's breathe()
 	fn(pAn);
 
+	// pointers vs reference
+	int a = 8;
+	// ref: MUST initialize &b
+	// This is NOT get address of a
+	// It is a alias name, it does have address
+	// It can be used to param transfer
+	int &b = a;
+	b = 5;
+	cout << "b = " << b << endl;
+
+	// This is *pC point to c's address
+	int c = 9;
+	int *pC = &c;
+	cout << "*pC = " << *pC << endl;
+
 	return 0;
 }
 
