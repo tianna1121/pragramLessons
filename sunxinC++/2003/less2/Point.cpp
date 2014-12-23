@@ -50,7 +50,7 @@ public:
 	}
 };
 
-int main()
+int point_main()
 {
 	Point pt(3, 4);
 
