@@ -1,62 +1,64 @@
 #include <iostream>
+
+#include "Animal.h"
+#include "Fish.h"
 using namespace std;
 
-class Animal{
-public:
-	Animal(){ cout << "animal construct" << endl; }
-	// overloaded
-	Animal(int height, int weight){ cout << "animal construct overloaded param" << endl; }
 
-	// declare the func, and it should be in .h files
-	void eat();
+// move to Animal.h
+//class Animal{
+//public:
+//	Animal(){ cout << "animal construct" << endl; }
+//	// overloaded
+//	Animal(int height, int weight){ cout << "animal construct overloaded param" << endl; }
+//
+//	// declare the func, and it should be in .h files
+//	void eat();
+//
+//// can only access by inherent class
+//// cannot access by others
+//// protected:
+//	void sleep(){
+//		cout << "animal sleep" << endl;
+//	}
+//
+//// cannot access by inherent class
+//// private:
+//	// Note we can virtual breathe()
+//	// this is called polymorphic, based on address of function
+//	// at runtime. If the inherent class does not implement this
+//	// function, it will call father's class's function
+//	void virtual breathe(){	cout << "animal breathe" << endl; }
+//	// pure abstract func: the inherent class MUST implement this func
+//	//void virtual breathe() = 0;
+//
+//	~Animal(){ cout << "Animal Deconstruct" << endl; }
+//};
 
-// can only access by inherent class
-// cannot access by others
-// protected:
-	void sleep(){
-		cout << "animal sleep" << endl;
-	}
-
-// cannot access by inherent class
-// private:
-	// Note we can virtual breathe()
-	// this is called polymorphic, based on address of function
-	// at runtime. If the inherent class does not implement this
-	// function, it will call father's class's function
-	void virtual breathe(){	cout << "animal breathe" << endl; }
-	// pure abstract func: the inherent class MUST implement this func
-	//void virtual breathe() = 0;
-
-	~Animal(){ cout << "Animal Deconstruct" << endl; }
-};
-
-void Animal::eat(){
-
-}
 
 // if father class public, then public
 // if father class protected, then protected
-class Fish : public Animal{
-public:
-	// overloaded Animal(int height, int weight)
-	Fish() : Animal(400,300),a(1) { cout << "Fish construct" << endl; }
-//	void test(){
-//		sleep();
-//		// if prive: cannot access by inherent class
-//		breathe();
-//	}
-	~Fish(){ cout << "Fish Deconstruct" << endl; }
-
-	// overude: used in the inherented class
-	void breathe(){ 
-		// Note: the Animal::
-		// Animal::breathe();
-		cout << "fish bubble" << endl;
-	} 
-private:
-	const int a;
-
-};
+//class Fish : public Animal{
+//public:
+//	// overloaded Animal(int height, int weight)
+//	Fish() : Animal(400,300),a(1) { cout << "Fish construct" << endl; }
+////	void test(){
+////		sleep();
+////		// if prive: cannot access by inherent class
+////		breathe();
+////	}
+//	~Fish(){ cout << "Fish Deconstruct" << endl; }
+//
+//	// overude: used in the inherented class
+//	void breathe(){ 
+//		// Note: the Animal::
+//		// Animal::breathe();
+//		cout << "fish bubble" << endl;
+//	} 
+//private:
+//	const int a;
+//
+//};
 
 void fn(Animal *pAn){
 	pAn->breathe();
@@ -65,14 +67,14 @@ void fn(Animal *pAn){
 
 int main(){
 
-//	Animal an;
-//	an.eat();
+	Animal an;
+	an.eat();
 	// cannot be accessed
 //	an.breathe();
 
 	Fish fh;
-	fh.breathe();
-	fh.sleep();
+	// fh.breathe();
+	// fh.sleep();
 
 	cout << "test Animal *pAn" << endl;
 	Animal *pAn;
