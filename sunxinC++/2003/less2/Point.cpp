@@ -3,7 +3,7 @@
 using namespace std;
 
 //struct Point
-struct Point{
+class Point{
 public:
 	int x;
 	int y;
